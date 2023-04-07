@@ -27,7 +27,7 @@ app.post("/", function(req,res){
   }
   //converting data obj to string
   const jsonData = JSON.stringify(data);  //we want to send data to mailchimp
-  const url = process.env.MAILCHIMP_URL ; //mailchimp api endpoint, /lists/{list_id}-> optional path to subscribe to member
+  const url = "https://us21.api.mailchimp.com/3.0/lists/b75fb366fa/members" ; //mailchimp api endpoint, /lists/{list_id}-> optional path to subscribe to member
 
   const options = {
     method: "POST",  //as we are posting data to external api
