@@ -31,7 +31,7 @@ app.post("/", function(req,res){
 
   const options = {
     method: "POST",  //as we are posting data to external api
-    auth: "Akash : ${apiKey}"         //--user 'anystring:TOKEN , authentication
+    auth: `Akash:${apiKey}`         //--user 'anystring:TOKEN , authentication
   }
 
   const Request =  https.request(url, options, function(response){
