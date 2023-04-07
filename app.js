@@ -46,6 +46,7 @@ app.post("/", function(req,res){
     }
     else
     {
+      //failure file sent
       res.sendFile(__dirname + "/failure.html");
     }
     // res.send();
@@ -65,8 +66,8 @@ app.post("/", function(req,res){
 
 })
 
-app.post("/failure",function(req,res){  //handles post on failure section
-  res.redirect("/");  //will redirect to home route
+app.post("/failure",function(req,resp){  //handles post on failure section
+  resp.redirect("/");  //will redirect to home route
 })
 
 
