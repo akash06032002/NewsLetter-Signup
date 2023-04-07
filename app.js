@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const https = require("https");
+require('dotenv').config();
+const apiKey = process.env.MAILCHIMP_API_KEY; //apiky
+
 app.use(express.urlencoded({extended:true})); //to grab info that gets posted in your server via html
 
 app.use(express.static(__dirname));   //to serve static files-html,css,imags   //we can also  us __dirname as static fils are present in public
@@ -24,11 +27,11 @@ app.post("/", function(req,res){
   }
   //converting data obj to string
   const jsonData = JSON.stringify(data);  //we want to send data to mailchimp
-  const url = " https://us21.api.mailchimp.com/3.0/lists/b75fb366fa/members" ; //mailchimp api endpoint, /lists/{list_id}-> optional path to subscribe to member
+  const url = process.env.MAILCHIMP_URL ; //mailchimp api endpoint, /lists/{list_id}-> optional path to subscribe to member
 
   const options = {
     method: "POST",  //as we are posting data to external api
-    auth: "Akash :30a98e96ca307ab4cdd73a99c38dea73-us21"               //--user 'anystring:TOKEN , authentication
+    auth: "Akash : ${apiKey}"         //--user 'anystring:TOKEN , authentication
   }
 
   const Request =  https.request(url, options, function(response){
