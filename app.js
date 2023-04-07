@@ -28,7 +28,7 @@ app.post("/", function(req,res){
 
   const options = {
     method: "POST",  //as we are posting data to external api
-    auth: "Akash :cff1325a79b5645cd0586fdbc2cd1a91-us21"               //--user 'anystring:TOKEN , authentication
+    auth: "Akash :448b08978a4aaf2df807744421dae0d7-us21"               //--user 'anystring:TOKEN , authentication
   }
 
   const Request =  https.request(url, options, function(response){
@@ -77,6 +77,6 @@ app.listen(process.env.PORT || 3000,function(req,res){  //process.env.PORT-> Dyn
 })
 
 // API key
-// cff1325a79b5645cd0586fdbc2cd1a91-us21
+// 448b08978a4aaf2df807744421dae0d7-us21
 //audience/ list ID
  // b75fb366fa
